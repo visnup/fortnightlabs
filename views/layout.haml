@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    %title fortnight labs
+    %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
+  %body
+    #page
+      %nav
+        %h1{ :class => request.path == '/' ? 'current' : '' }
+          %a{ :href => '/' } <em>fortnight</em>labs
+        %ul
+          %li{ :class => request.path == '/portfolio' ? 'current' : '' }
+            %a{ :href => '/portfolio' } portfolio
+          %li{ :class => request.path == '/contact' ? 'current' : '' }
+            %a{ :href => '/contact' } contact
+          %li{ :class => request.path == '/about' ? 'current' : '' }
+            %a{ :href => '/about' } about
+      #contents
+        = yield
