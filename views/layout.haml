@@ -7,7 +7,10 @@
     #page
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
-          %a{ :href => '/' } <em>fortnight</em>labs
+          %a{ :href => '/' }
+            %span.logo
+              %em fortnight
+              labs
         %ul
           %li{ :class => request.path == '/portfolio' ? 'current' : '' }
             %a{ :href => '/portfolio' } portfolio

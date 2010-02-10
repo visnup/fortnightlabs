@@ -6,18 +6,27 @@
 !left_margin = 220px
 
 @font-face
-  :font-family imfelldwpica
-  :src url('/fonts/imfellclass28/FePIrm27C.otf')
+  :font-family imfellgreatprimer
+  :src url('/fonts/imfellclass28/FeGPrm27C.otf')
 @font-face
-  :font-family imfelldwpica
+  :font-family imfellgreatprimer
   :font-style italic
-  :src url('/fonts/imfellclass28/FePIit27C.otf')
+  :src url('/fonts/imfellclass28/FeGPit27C.otf')
 
 body
-  :font-family imfelldwpica, serif
+  :font-family imfellgreatprimer, serif
   :font-size = !medium
   :text-align center
-  :background-color #fbeec4
+  :margin 0px
+  :padding 0px
+  :min-width 820px
+  :background-color #ffffea
+  :background -webkit-gradient(linear, left top, right top, from(#ffffec), to(#fffff0))
+  :border-width 37px 75px 40px 36px
+  :-webkit-border-image url('/images/book.png') 37 75 30 36 stretch stretch
+
+//h1, h2, h3, h4, h5, h6
+  //:font-family imfelldwpica, serif
 
 a
   :color = !link
@@ -28,12 +37,15 @@ a
 p
   :margin 25px 0px
 
+.logo
+  :word-spacing -6px
+
 #page
-  :width 900px
+  :width 800px
   :text-align left
   :margin 0px auto
 #contents
-  :padding 8px 0px 0px #{!left_margin}
+  :padding 8px 20px 0px #{!left_margin}
   :background url('/images/ruled.png') repeat
   :border-right 2px solid #d8ccae
   p:first-child
