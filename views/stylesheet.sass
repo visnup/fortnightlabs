@@ -1,7 +1,8 @@
 !link = #069
+!grid = #eae4d2
 
+!small = 12px
 !medium = 20px
-!large = 24px
 
 !left_margin = 220px
 
@@ -21,7 +22,7 @@ body
   :padding 0px
   :min-width 820px
   :background-color #ffffea
-  :background -webkit-gradient(linear, left top, right top, from(#ffffec), to(#fffff0))
+  :background -webkit-gradient(linear, left top, right top, from(#ffffec), to(#ffffee))
   :border-width 37px 75px 40px 36px
   :-webkit-border-image url('/images/book.png') 37 75 30 36 stretch stretch
 
@@ -34,9 +35,6 @@ a
   &:hover
     :text-decoration underline
 
-p
-  :margin 25px 0px
-
 .logo
   :word-spacing -6px
 
@@ -44,13 +42,6 @@ p
   :width 800px
   :text-align left
   :margin 0px auto
-#contents
-  :padding 8px 20px 0px #{!left_margin}
-  :background url('/images/ruled.png') repeat
-  :border-right 2px solid #d8ccae
-  p:first-child
-    :margin-top 0px
-
 nav
   h1
     :float left
@@ -66,3 +57,24 @@ nav
         :margin-left 0px
   .current a
     :text-decoration underline
+#contents
+  :min-height 600px
+  :padding 8px 20px 0px #{!left_margin}
+  :background url('/images/ruled.png') repeat
+  :border-right 2px solid #{!grid}
+  :line-height 180%
+  p:first-child
+    :margin-top 0px
+
+.notes
+  :font-size = !small
+  :font-family 'handwriting - dakota', cursive
+  :line-height 140%
+  :opacity 0.8
+  :position absolute
+  :top 400px
+  :left 40px
+  :-webkit-transform rotate(-10deg)
+  em
+    :margin-right 5px
+    :color = !grid - #666

@@ -3,7 +3,7 @@
   %head
     %title fortnight labs
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
-  %body
+  %body{ :class => @template }
     #page
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
