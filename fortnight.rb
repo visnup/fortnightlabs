@@ -22,18 +22,22 @@ def h template
 end
 
 get '/' do
+  @page = 1
   h :index
 end
 
 get '/portfolio' do
+  @page = 3
   h :portfolio
 end
 
 get '/contact' do
+  @page = 5
   h :contact
 end
 
 get '/about' do
+  @page = 7
   h :about
 end
 

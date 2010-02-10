@@ -5,6 +5,7 @@
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
   %body{ :class => @template }
     #page
+      #page-number= @page
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
           %a{ :href => '/' }
@@ -20,3 +21,5 @@
             %a{ :href => '/about' } about
       #contents
         = yield
+    #footer
+      &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.

@@ -1,7 +1,9 @@
 !link = #069
 !grid = #eae4d2
+!sepia = !grid - #666
 
-!small = 12px
+!tiny = 12px
+!small = 16px
 !medium = 20px
 
 !left_margin = 220px
@@ -67,7 +69,7 @@ nav
     :margin-top 0px
 
 .notes
-  :font-size = !small
+  :font-size = !tiny
   :font-family 'handwriting - dakota', cursive
   :line-height 140%
   :opacity 0.8
@@ -77,4 +79,12 @@ nav
   :-webkit-transform rotate(-10deg)
   em
     :margin-right 5px
-    :color = !grid - #666
+    :color = !sepia
+
+#footer, #page-number
+  :font-size = !small
+  :color = !sepia
+#page-number
+  :position absolute
+  :top 20px
+  :right 50px
