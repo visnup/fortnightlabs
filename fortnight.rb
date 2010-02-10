@@ -18,31 +18,15 @@ Markdown = RDiscount
 
 set :sass, :style => :compressed
 
-def h template
-  haml @template = template
-end
-
-get '/' do
-  @page = 1
-  h :index
-end
-
-get '/portfolio' do
-  @page = 3
-  h :portfolio
-end
-
-get '/contact' do
-  @page = 5
-  h :contact
-end
-
-get '/about' do
-  @page = 7
-  h :about
-end
-
 get '/application.css' do
   content_type 'text/css'
   sass :stylesheet
+end
+
+get '/' do
+  haml :index
+end
+
+get '/:template' do
+  haml params[:template].to_sym
 end

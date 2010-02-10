@@ -3,9 +3,10 @@
   %head
     %title fortnight labs
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
-  %body{ :class => @template }
+  %body{ :class => params[:template] }
     #page
-      #page-number= @page
+      - @pages = %w/ portfolio contact about /
+      #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
           %a{ :href => '/' }
@@ -13,13 +14,15 @@
               %em fortnight
               labs
         %ul
-          %li{ :class => request.path == '/portfolio' ? 'current' : '' }
-            %a{ :href => '/portfolio' } portfolio
-          %li{ :class => request.path == '/contact' ? 'current' : '' }
-            %a{ :href => '/contact' } contact
-          %li{ :class => request.path == '/about' ? 'current' : '' }
-            %a{ :href => '/about' } about
+          - @pages.each do |p|
+            %li{ :class => request.path == "/#{p}" ? 'current' : '' }
+              %a{ :href => "/#{p}" }= p
       #contents
         = yield
     #footer
       &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.
+      .colophon
+        %a{ :href => 'http://iginomarini.com/fell/' } The Fell Types
+        are digitally reproduced by
+        %a{ :href => 'http://www.iginomarini.com' }> Igino Marini
+        \.
