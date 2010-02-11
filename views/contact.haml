@@ -1,6 +1,23 @@
-:markdown
-  We respond with credulity
-  =========================
+%h1 We respond with credulity
+
+- if params[:sent]
+  %h2 Ok, we'll get right back to you.
+- else
+  %form{ :action => 'http://postalgone.appspot.com/mail', :method => 'post' }
+    %input{ :type => 'hidden', :name => 'location', :value => request.url+'?sent=1' }
+
+    %p
+      %label{ :for => 'contact_subject' } From
+      %br
+      %input{ :type => 'text', :name => 'subject', :id => 'contact_subject' }
+
+    %p
+      %label{ :for => 'contact_body' } Message
+      %br
+      %textarea{ :name => 'body', :id => 'contact_body' }
+
+    %p
+      %input{ :type => 'submit', :value => 'Send' }
 
 .notes
   :markdown
