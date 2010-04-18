@@ -1,12 +1,13 @@
 !link = #069
 !grid = #eae4d2
 !sepia = !grid - #666
+!dark_sepia = !sepia - #444
 
-!tiny = 12px
-!small = 16px
-!medium = 19px
+!x_small = "small"
+!small = "medium"
+!medium = "large"
 
-!left_margin = 220px
+!left_margin = 320px
 
 @font-face
   :font-family imfellgreatprimer
@@ -19,20 +20,21 @@
 body, input, textarea
   :font-family imfellgreatprimer, serif
   :font-size = !medium
+  :color = !dark_sepia
 
 body
-  :text-align center
   :margin 0px
   :padding 0px
-  :min-width 820px
-  :background-color #ffffea
-  :background -webkit-gradient(linear, left top, right top, from(#ffffec), to(#ffffee))
-  :border-width 37px 75px 40px 36px
-  :-webkit-border-image url('/images/book.png') 37 75 30 36 stretch stretch
+  :min-width 750px
+  :border-width 75px 200px 150px 75px
+  :-webkit-border-image  url('/images/book.jpg') 75 200 150 75 stretch stretch
+  :text-align center
+  :overflow-x hidden
 
 input, textarea
-  :border 1px solid #{!grid}
+  :border 1px solid #{!sepia}
   :padding 5px
+  :background-color rgba(255, 255, 255, 0.1)
 input[type=submit], button
   :background-color = !sepia
   :color #fff
@@ -44,39 +46,29 @@ a
   &:hover
     :text-decoration underline
 
-.logo
-  :word-spacing -6px
-
 #page
-  :width 800px
-  :text-align left
   :margin 0px auto
+  :text-align left
+  :width 750px
 nav
+  :float left
   h1
-    :float left
     :margin-top 0px
   ul
     :list-style-type none
     :padding 18px 0px 0px
-    :margin-left = !left_margin
-    li
-      :display inline
-      :margin-left 10px
-      &:first-child
-        :margin-left 0px
   .current a
     :text-decoration underline
 #contents
   :min-height 600px
-  :padding 8px 20px 0px #{!left_margin}
-  :background url('/images/ruled.png') repeat
-  :border-right 2px solid #{!grid}
-  :line-height 180%
+  :padding 0px 20px 0px #{!left_margin}
+  p
+    :line-height 180%
   p:first-child
     :margin-top 0px
 
 .notes
-  :font-size = !tiny
+  :font-size = !x_small
   :font-family 'handwriting - dakota', cursive
   :line-height 140%
   :opacity 0.8
@@ -91,10 +83,14 @@ nav
 #footer, #page-number
   :font-size = !small
   :color = !sepia
+#footer
+  :text-align center
+  :margin-left = !left_margin
+  :margin-bottom 1em
 #page-number
   :position absolute
-  :top 20px
-  :right 50px
+  :top 60px
+  :right 150px
 
 body.contact
   input[type=text], textarea
