@@ -4,6 +4,6 @@ begin
 rescue LoadError
 end
 
-require 'fortnight'
+require 'application'
 Sinatra::Application.set :raise_errors, true
 run Sinatra::Application
