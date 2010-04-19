@@ -8,6 +8,7 @@
       - @pages = %w/ portfolio contact about /
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
+          %img{ :src => '/images/logo.png' }
           %a{ :href => '/' }
             %span.logo
               %em fortnight
