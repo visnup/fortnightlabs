@@ -7,7 +7,7 @@
 !small = "medium"
 !medium = "large"
 
-!left_margin = 320px
+!left_margin = 31%
 
 @font-face
   :font-family imfellgreatprimer
@@ -26,8 +26,8 @@ body
   :margin 0px
   :padding 0px
   :min-width 750px
-  :border-width 75px 200px 150px 75px
-  :-webkit-border-image  url('/images/book.jpg') 75 200 150 75 stretch stretch
+  :border-width 75px 120px 100px 75px
+  :-webkit-border-image  url('/images/book.jpg') 75 120 100 75 stretch stretch
   :text-align center
   :overflow-x hidden
 
@@ -47,11 +47,10 @@ a
     :text-decoration underline
 
 #page
-  :margin 0px auto
   :text-align left
-  :width 750px
 nav
   :float left
+  :width = !left_margin
   h1
     :margin-top 0px
   ul
@@ -59,38 +58,37 @@ nav
     :padding 18px 0px 0px
   .current a
     :text-decoration underline
+
+#contents, #footer
+  :margin-left = !left_margin
+  :padding 0px 60px
+
 #contents
   :min-height 600px
-  :padding 0px 20px 0px #{!left_margin}
   p
     :line-height 180%
   p:first-child
     :margin-top 0px
+  #page-number
+    :float right
+    :font-size = !small
+  .notes
+    :font-size = !x_small
+    :font-family 'handwriting - dakota', cursive
+    :line-height 140%
+    :opacity 0.8
+    :position absolute
+    :top 400px
+    :left = !left_margin * -1.2
+    :-webkit-transform rotate(-10deg)
+    em
+      :margin-right 5px
+      :color = !sepia
 
-.notes
-  :font-size = !x_small
-  :font-family 'handwriting - dakota', cursive
-  :line-height 140%
-  :opacity 0.8
-  :position absolute
-  :top 400px
-  :left 60px
-  :-webkit-transform rotate(-10deg)
-  em
-    :margin-right 5px
-    :color = !sepia
-
-#footer, #page-number
+#footer
   :font-size = !small
   :color = !sepia
-#footer
   :text-align center
-  :margin-left = !left_margin
-  :margin-bottom 1em
-#page-number
-  :position absolute
-  :top 60px
-  :right 150px
 
 body.contact
   input[type=text], textarea

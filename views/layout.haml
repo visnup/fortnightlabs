@@ -6,7 +6,6 @@
   %body{ :class => params[:template] }
     #page
       - @pages = %w/ portfolio contact about /
-      #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
           %a{ :href => '/' }
@@ -18,11 +17,13 @@
             %li{ :class => request.path == "/#{p}" ? 'current' : '' }
               %a{ :href => "/#{p}" }= p
       #contents
+        #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
         = yield
-    #footer
-      &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.
-      .colophon
-        %a{ :href => 'http://iginomarini.com/fell/' } The Fell Types
-        are digitally reproduced by
-        %a{ :href => 'http://www.iginomarini.com' }> Igino Marini
-        \.
+
+      #footer
+        &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.
+        .colophon
+          %a{ :href => 'http://iginomarini.com/fell/' } The Fell Types
+          are digitally reproduced by
+          %a{ :href => 'http://www.iginomarini.com' }> Igino Marini
+          \.
