@@ -3,6 +3,12 @@
   %head
     %title fortnight labs
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
+    %script{ :type => 'text/javascript', :src => 'http://code.jquery.com/jquery.min.js' }
+    :javascript
+      $(function() {
+        var r = Math.random() * 10 - 5
+        $('.notes').css('-webkit-transform', 'rotate(' + r + 'deg)');
+      });
   %body{ :class => params[:template] }
     #page
       - @pages = %w/ portfolio contact about /

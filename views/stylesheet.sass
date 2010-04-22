@@ -83,22 +83,24 @@ nav
 
 #contents
   :min-height 600px
+  :position relative
   p
     :line-height 180%
   p:first-child
     :margin-top 0px
   #page-number
-    :float right
+    :position absolute
+    :top -30px
+    :right 30px
     :font-size = !small
   .notes
+    :position absolute
+    :top 500px
+    :left = !left_margin * -1.2
     :font-size = !x_small
     :font-family 'handwriting - dakota', cursive
     :line-height 140%
-    :opacity 0.8
-    :position absolute
-    :top 400px
-    :left = !left_margin * -1.2
-    :-webkit-transform rotate(-10deg)
+    :opacity 0.7
     em
       :margin-right 5px
       :color = !sepia
