@@ -24,6 +24,12 @@
           - @pages.each do |p|
             %li{ :class => request.path == "/#{p}" ? 'current' : '' }
               %a{ :href => "/#{p}" }= p
+        %ul
+          %li
+            %a{ :href => 'http://fortnightlabs.posterous.com/' } blog
+          %li
+            %a{ :href => 'http://twitter.com/fortnightlabs' } twitter
+
       #contents
         #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
         = yield
