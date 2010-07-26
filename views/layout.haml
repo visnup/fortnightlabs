@@ -2,14 +2,22 @@
 %html
   %head
     %title fortnight labs
+    %link{ :type => 'text/css', :rel => 'stylesheet', :href => 'http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:regular,italic' }
     %link{ :type => 'text/css', :rel => 'stylesheet', :href => '/application.css', :media => 'all' }
     %meta{ :name => "google-site-verification", :content => "hNsmd8QNew8fXc5NkETEkZo-HIGkdbHg_oFejOEZKI0" }
+    %script{ :type => 'text/javascript', :src => 'http://code.jquery.com/jquery.min.js' }
+    :javascript
+      $(function() {
+        var r = Math.random() * 10 - 5
+        $('.notes').css('-webkit-transform', 'rotate(' + r + 'deg)');
+      });
   %body{ :class => params[:template] }
     #page
       - @pages = %w/ portfolio contact about /
-      #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
       %nav
         %h1{ :class => request.path == '/' ? 'current' : '' }
+          %img{ :src => '/images/logo.png' }
+          %br
           %a{ :href => '/' }
             %span.logo
               %em fortnight
@@ -18,12 +26,15 @@
           - @pages.each do |p|
             %li{ :class => request.path == "/#{p}" ? 'current' : '' }
               %a{ :href => "/#{p}" }= p
+        %ul
+          %li
+            %a{ :href => 'http://fortnightlabs.posterous.com/' } blog
+          %li
+            %a{ :href => 'http://twitter.com/fortnightlabs' } twitter
+
       #contents
+        #page-number= (@pages.index(params[:template]) || -1) * 2 + 3
         = yield
-    #footer
-      &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.
-      .colophon
-        %a{ :href => 'http://iginomarini.com/fell/' } The Fell Types
-        are digitally reproduced by
-        %a{ :href => 'http://www.iginomarini.com' }> Igino Marini
-        \.
+
+      #footer
+        &copy; #{Time.now.year} fortnight labs &mdash; purveyors of fine things.
