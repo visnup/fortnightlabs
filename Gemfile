@@ -1,4 +1,4 @@
-source "http://gemcutter.org"
+source :rubygems
 
 gem 'haml'
 gem 'rdiscount'
